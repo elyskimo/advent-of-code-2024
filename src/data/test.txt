@@ -1,0 +1,5 @@
+Apple       Strawberry
+Banana      Lemon
+Cherry      Raspberry
+Date        Watermelon
+Elderberry  Pineapple
