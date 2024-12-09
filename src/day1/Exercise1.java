@@ -1,10 +1,10 @@
+package day1;
+
 import java.nio.file.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Arrays;
 import utils.FileUtils;
-
-
 
 public class Exercise1 {
     public static void main(String[] args) {
