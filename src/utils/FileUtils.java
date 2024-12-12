@@ -34,20 +34,34 @@ public class FileUtils {
         List<String> lines = Files.readAllLines(Paths.get(filePath));
         int rowCount = lines.size();
 
-//         int[][] levels = new int[rowCount][];
         List<int[]> levelsList = new ArrayList<>();
 
         for (String line : lines) {
-//             String[] levelValuesSplit = lines.get(i).trim().split("\\s+");
             String[] levelValuesSplit = line.trim().split("\\s+");
             System.out.println(levelValuesSplit);
             int[] levelValues = Arrays.stream(levelValuesSplit).mapToInt(Integer::parseInt).toArray();
 
-//             levels[i] = levelValues;
             levelsList.add(levelValues);
         }
 
         return levelsList.toArray(new int[levelsList.size()][]);
+    }
+
+    public String[] getXmasArrays() throws IOException {
+        String filePath = "data/xmas.txt";
+        List<String> lines = Files.readAllLines(Paths.get(filePath));
+        int rowCount = lines.size();
+//
+//         List<String[]> result = new ArrayList<>();
+//
+//         for (String line : lines) {
+//             char[] chars = line.toCharArray();
+//             System.out.println(Arrays.toString(chars));
+//
+//             result.add(chars);
+//         }
+
+        return lines.toArray(new String[rowCount]);
     }
 
 
