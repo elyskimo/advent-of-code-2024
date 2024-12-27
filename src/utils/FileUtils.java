@@ -109,5 +109,34 @@ public class FileUtils {
 
         return pagesList;
     }
+//
+//     public String[][] getLabPatrolArrays() throws IOException {
+//         String filePath = "data/lab-patrol.txt";
+//         List<String> lines = Files.readAllLines(Paths.get(filePath));
+//         int rowCount = lines.size();
+//
+//         char[][] result =
+//
+//         return lines.toArray(new String[rowCount]);
+//     }
+
+    public Character[][] getLabPatrolArrays() throws IOException {
+        String filePath = "data/lab-patrol.txt";
+        List<String> lines = Files.readAllLines(Paths.get(filePath));
+        int rowCount = lines.size();
+
+        // Create a 2D Character array
+        Character[][] charArray = new Character[rowCount][];
+
+        // Populate the Character array
+        for (int i = 0; i < rowCount; i++) {
+            String line = lines.get(i);
+            charArray[i] = line.chars()  // Convert to IntStream
+                               .mapToObj(c -> (char) c)  // Convert int to char
+                               .toArray(Character[]::new);  // Collect into Character[]
+        }
+
+        return charArray;
+    }
 
 }
